@@ -14,7 +14,7 @@ Definition from [information gain calculation](https://en.wikipedia.org/wiki/Inf
 
 ![Intrinsic value calculation][iv]
 
-[iv]: https://github.com/Thijsvanede/info_gain/blob/master/images/information_gain_formula.gif
+[iv]: https://github.com/Thijsvanede/info_gain/blob/master/images/intrinsic_value_formula.gif
 
 ### Information gain ratio calculation
 Definition from [information gain calculation](https://en.wikipedia.org/wiki/Information_gain_ratio) (retrieved 2018-07-13).
