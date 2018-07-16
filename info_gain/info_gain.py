@@ -73,9 +73,13 @@ def info_gain(Ex, a, nan=True):
     # Compute the entropy of examples
     H_Ex = entropy(list(Counter(Ex).values()))
 
+    # Compute the set of all values v in a, given nan
+    set_a = set('nan' if isinstance(x, float) and math.isnan(x) 
+                else x for x in a) if nan else set(a)
+    
     # Compute the sum of all values v in a
     sum_v = 0
-    for v in set(a):
+    for v in set_a:
         Ex_a_v = _Ex_a_v_(Ex, a, v, nan)
         sum_v += (len(Ex_a_v) / len(Ex)) *\
                  (entropy(list(Counter(Ex_a_v).values())))
@@ -113,9 +117,13 @@ def intrinsic_value(Ex, a, nan=True):
     if len(Ex) != len(a):
         raise ValueError("Ex and a must be of the same size.")
 
+    # Compute the set of all values v in a, given nan
+    set_a = set('nan' if isinstance(x, float) and math.isnan(x) 
+                else x for x in a) if nan else set(a)
+                
     # Compute the sum of all values v in a
     sum_v = 0
-    for v in set(a):
+    for v in set_a:
         Ex_a_v = _Ex_a_v_(Ex, a, v, nan)
         sum_v += (len(Ex_a_v) / len(Ex)) * math.log(len(Ex_a_v) / len(Ex), 2)
 

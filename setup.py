@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='info_gain',
-    version='1.0',
+    version='1.0.1',
     author='Thijs van Ede',
     author_email='t.s.vanede@utwente.nl',
     description='Information gain utilities',
